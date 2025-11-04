@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Watch Tailwind CSS",
+      "type": "shell",
+      "command": "npx @tailwindcss/cli -i ./styles/tailwind/input.css -o ./styles/tailwind/output.css --watch",
+      "problemMatcher": []
+    },
+    {
+      "label": "Minify Tailwind CSS",
+      "type": "shell",
+      "command": "npx @tailwindcss/cli -i ./styles/tailwind/input.css -o ./styles/tailwind/output.css --minify"
+    }
+  ]
+}
+
