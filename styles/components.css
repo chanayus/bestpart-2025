@@ -1,0 +1,150 @@
+.product-card {
+  display: block;
+
+  border: 1px solid #999;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  &:hover {
+    & .name {
+      color: var(--primary);
+    }
+
+    & .info .arrow {
+      background: black;
+
+      &::after {
+        transform: translateX(48px);
+        transition-delay: 0; /* เพิ่มดีเลย์ให้ after ตอน hover */
+      }
+
+      &::before {
+        transform: translateX(0);
+        transition-delay: 0.125s; /* เอาดีเลย์ออกให้เคลื่อนพร้อมกัน */
+      }
+    }
+  }
+
+  /* เมื่อไม่ hover ให้ตั้ง delay ตรงข้าม */
+  &:not(:hover) .info .arrow {
+    &::after {
+      transition-delay: 0.125s;
+    }
+
+    &::before {
+      transition-delay: 0s;
+    }
+  }
+
+  & > img {
+    max-width: 100%;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%);
+    user-select: none;
+  }
+
+  & .info {
+    padding: 1.5rem;
+    padding-top: 0;
+    display: flex;
+    align-items: flex-end;
+    gap: 2.5rem;
+    justify-content: space-between;
+
+    & .name {
+      line-height: 1.3;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      line-clamp: 2;
+      -webkit-line-clamp: 2;
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+      transition: color 0.25s;
+      width: 100%;
+      min-height: 3rem;
+      text-wrap: balance;
+      font-size: clamp(1rem, 5vw, 1.25rem);
+    }
+
+    & .desc {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      line-clamp: 2;
+      -webkit-line-clamp: 2;
+      min-height: 3rem;
+    }
+
+    & .arrow {
+      background: var(--primary);
+      width: 4rem;
+      height: 4rem;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 999px;
+      transition: background-color 0.35s;
+      position: relative;
+
+      &::after,
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        -webkit-mask: url("../icons/chevron-right.svg") no-repeat center;
+        mask: url("../icons/chevron-right.svg") no-repeat center;
+        mask-size: 60%;
+        transition: transform 0.35s;
+      }
+
+      &::before {
+        transform: translateX(-48px);
+      }
+    }
+  }
+}
+
+.blog-card {
+  display: block;
+
+  &:hover {
+    figure img {
+      transform: scale(1.05);
+    }
+
+    & .name {
+      color: var(--primary);
+    }
+  }
+
+  & figure {
+    border-radius: 1rem;
+    overflow: hidden;
+    aspect-ratio: 1.58;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s;
+    }
+  }
+  & .date {
+    color: #3d3a3b;
+    font-size: 14px;
+    margin-top: 0.75rem;
+    margin-bottom: 0.125rem;
+  }
+  & .name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    font-weight: 600;
+    transition: color 0.25s;
+  }
+}

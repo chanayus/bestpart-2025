@@ -1,0 +1,17 @@
+.swiper-pagination-progressbar {
+  position: relative;
+  background: #f1f1f1;
+  max-width: 22.5rem;
+  border-radius: 999px;
+  overflow: hidden;
+  height: 4px;
+  .swiper-pagination-progressbar-fill {
+    background-color: #999999;
+    border-radius: 999px;
+  }
+}
+
+.swiper-button-prev:has(img) svg,
+.swiper-button-next:has(img) svg {
+  display: none;
+}

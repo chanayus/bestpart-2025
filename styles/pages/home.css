@@ -1,0 +1,362 @@
+header {
+  & .search-type-switcher {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    border-radius: 999px;
+    color: #fff;
+    outline: none;
+    white-space: nowrap;
+    transition:
+      opacity 0.25s,
+      background-color 0.25s;
+
+    & .svg-icon {
+      background-color: #fff;
+    }
+    &:hover {
+      opacity: 0.875;
+    }
+    &.active {
+      background: #fff;
+      color: #000;
+      box-shadow: inset 0px -0.25rem 0px 0px var(--primary);
+      transition:
+        opacity 0.25s,
+        box-shadow 0.25s,
+        background-color 0.25s;
+
+      & .svg-icon {
+        background-color: var(--primary);
+      }
+    }
+  }
+}
+
+#part-name-search {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+/* search part by car model */
+
+#car-model-search {
+  display: none;
+  gap: 0.75rem;
+
+  &.active {
+    display: flex;
+  }
+
+  @media (width < 1025px) {
+    flex-direction: column;
+  }
+
+  /* add orange border when car select popup is active */
+  &:has(#car-select-popup.active) .popup-toggle {
+    box-shadow: 0px 0px 0px 3px var(--color-primary) inset;
+  }
+
+  & .tag-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: fit-content;
+    &:not(:has(.tag)) {
+      display: none;
+    }
+    isolation: isolate;
+  }
+
+  /* car select popup */
+  & #car-select-popup {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    width: 100%;
+    height: 25rem;
+    visibility: hidden;
+    display: flex;
+    opacity: 0;
+    background-color: #fff;
+    border-radius: 1rem;
+    border: 1px solid var(--gray);
+    transition:
+      opacity 0.25s,
+      visibility 0.25s;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    & section {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      &:nth-of-type(2) {
+        border-inline: 1px solid var(--gray);
+      }
+
+      &:not(.active) {
+        .list .option {
+          display: none;
+          pointer-events: none;
+          animation: exit 0.2s;
+        }
+      }
+      & .tag {
+        background: var(--primary);
+        font-size: 0.875rem;
+        padding: 0.125rem 1rem;
+        font-weight: 500;
+        flex-grow: 1;
+      }
+
+      & h6 {
+        font-size: clamp(14px, 2.5vw, 1rem);
+      }
+
+      & .list {
+        font-size: 0.875rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        overflow-y: auto;
+
+        & .option {
+          opacity: 0;
+          animation: enter 0.25s forwards;
+          animation-delay: 0.25s;
+          font-size: 0.875rem;
+          text-align: left;
+          &:hover {
+            color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+
+  & .popup-toggle {
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    background: #fff;
+    width: 100%;
+    text-align: left;
+    border-color: #d9d9d9;
+    outline: none;
+    transition: box-shadow 0.25s;
+    color: #3d3a3b;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+  }
+}
+
+/* Search by part name */
+
+#part-name-search {
+  &:has(input:focus) #filter-result {
+    visibility: visible;
+    opacity: 1;
+  }
+  & #filter-result {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    width: 100%;
+    max-height: 25rem;
+    overflow-y: auto;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    opacity: 0;
+    background-color: #fff;
+    border-radius: 1rem;
+    border: 1px solid var(--gray);
+    transition:
+      opacity 0.25s,
+      visibility 0.25s;
+
+    & section.category {
+      display: none;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      &.active {
+        display: flex;
+      }
+      &:has(.result-item:hover) .result-item:not(:hover) {
+        opacity: 0.5;
+      }
+      & .result-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        font-weight: 500;
+        transition: opacity 0.25s;
+
+        & .name {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          line-clamp: 2;
+          -webkit-line-clamp: 2;
+        }
+      }
+    }
+
+    & .alert,
+    & hgroup {
+      padding: 0.375rem 1rem;
+      width: fit-content;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    & hgroup {
+      background-color: #fdf4ed;
+    }
+
+    & .alert {
+      color: #3d3a3b;
+      background-color: #f0f0f0;
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+#product-section #product-categories .btn {
+  border-radius: 8px 8px 0 0;
+  white-space: nowrap;
+  min-width: fit-content;
+  padding: 0.5rem 2rem;
+  flex: 1;
+  font-weight: 500;
+  transition:
+    color 0.25s,
+    background-color 0.25s;
+  & .svg-icon {
+    background-color: #000;
+    transition: background-color 0.25s;
+  }
+
+  &:hover {
+    color: var(--primary);
+    & .svg-icon {
+      background-color: var(--primary);
+    }
+  }
+
+  &.active {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.14);
+    & .svg-icon {
+      background-color: #fff;
+    }
+  }
+}
+
+.warranty-section {
+  & article {
+    & ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    & ::-webkit-scrollbar-track {
+      background: #d9d9d936;
+      border-radius: 999px;
+    }
+
+    & ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 999px;
+    }
+  }
+}
+
+.product-card {
+  animation: card-reveal 0.5s ease-in-out;
+}
+
+.tag {
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  max-height: fit-content;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  background: #000;
+  color: #fff;
+  flex: 1;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: clamp(12px, 2.5vw, 1rem);
+  line-height: 1;
+  text-transform: capitalize;
+  animation: enter 0.25s;
+  & img {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+#product-slide .swiper-slide {
+  transition: transform 0.25s;
+  &:not(.swiper-slide-active) {
+    transform: scale(0.875);
+  }
+}
+
+@keyframes card-reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.removing {
+  opacity: 0;
+  scale: 0.875;
+  transition:
+    opacity 0.25s,
+    scale 0.25s;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes exit {
+  from {
+    display: flex;
+    opacity: 1;
+  }
+  to {
+    display: none;
+    opacity: 0;
+  }
+}

@@ -1,21 +1,19 @@
 @import "./tailwind/output.css";
+@import "./components.css";
+@import "./swiper.css";
 
 :root {
-  --primary: #5965d1;
+  --primary: rgba(240, 103, 36, 1);
+  --primary-darken: rgb(181, 79, 28);
+  --gray: #d9d9d9;
 
   --fs-h1: clamp(32px, 3.33vw, 4rem);
   --fs-h2: clamp(32px, 2.5vw, 3rem);
-  --fs-h3: clamp(24px, 2.08vw, 2.5rem);
+  --fs-h3: clamp(28px, 2.08vw, 2.5rem);
   --fs-h4: clamp(24px, 1.9vw, 2.25rem);
   --fs-h5: max(1.5rem, 18px);
   --fs-h6: max(1.25rem, 16px);
 }
-
-/* @font-face {
-  font-family: "";
-  font-weight: 300;
-  src: url("../fonts/") format("woff2");
-} */
 
 html {
   font-size: clamp(14px, 0.84vw, 16px);
@@ -26,11 +24,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #fff;
-  background: #050505;
+  color: #000;
+  background: #fff;
   animation: fade-in 0.35s forwards;
   background-repeat: no-repeat;
   position: relative;
+  font-family: "Prompt", sans-serif;
 }
 
 @keyframes fade-in {
@@ -76,6 +75,10 @@ h6 {
   font-size: var(--fs-h6);
 }
 
+button {
+  cursor: pointer;
+}
+
 button:disabled {
   opacity: 0.4;
   pointer-events: none;
@@ -99,17 +102,33 @@ ol li {
 
 ::-webkit-scrollbar {
   width: 10px;
-  height: 6px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
   background: transparent;
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #888;
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.copyright {
+  background: linear-gradient(90deg, #3d3a3b 0%, #000000 100%);
+  color: #959595;
+  font-size: 12px;
+}
+
+.svg-icon {
+  -webkit-mask: var(--src) no-repeat center;
+  mask: var(--src) no-repeat center;
+  mask-size: contain;
+  pointer-events: none;
+  transition: background-color 0.25s;
 }

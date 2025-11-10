@@ -3,21 +3,447 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Document</title>
+    <title>BESTPART</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- Libs -->
+    <link rel="stylesheet" href="./libs/swiper/swiper.css" />
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
     <link rel="stylesheet" href="./styles/base.css" />
-    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/pages/home.css" />
 
     <!-- Component -->
     <script src="./components/navbar.js"></script>
     <script src="./components/footer.js"></script>
 
+    <!-- Script -->
     <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/pages/home.js"></script>
   </head>
   <body>
     <navbar-component></navbar-component>
-    <main class="flex-1 container w-full h-full flex bg-primary flex-col"></main>
+    <main class="flex-1 w-full h-full flex flex-col gap-y-16">
+      <header class="h-128 bg-black flex gap-y-14 flex-col relative z-10 text-white justify-center items-center">
+        <div class="container max-w-4xl flex gap-y-14 flex-col justify-center items-center">
+          <h3 class="text-center text-balance leading-tight">
+            ค้นหาอะไหล่รถยนต์<br class="lg:hidden" />ที่เหมาะกับคุณได้ที่นี่
+          </h3>
+
+          <section id="search" class="bg-white/90 w-full text-black rounded-2xl sm:px-8 px-4 pb-8 pt-4">
+            <!-- Search Type Switcher -->
+            <div class="bg-black/50 flex border overflow-hidden border-white/20 mx-auto relative -top-10 backdrop-blur rounded-full w-full md:max-w-xl">
+              <button data-type="car-model" class="flex-1 search-type-switcher active">
+                <div data-src="../icons/car.svg" class="svg-icon md:size-8 size-6"></div>
+                ค้นหาตามรุ่นรถ
+              </button>
+              <button data-type="part-name" class="flex-1 search-type-switcher">
+                <div data-src="../icons/search.svg" class="svg-icon md:size-8 size-6"></div>
+                ค้นหาด้วยชื่อสินค้า
+              </button>
+            </div>
+
+            <!-- Search by Car Model -->
+            <section id="car-model-search" class="active">
+              <div id="search-input-container" class="flex-1 relative flex gap-4">
+                <button class="popup-toggle">
+                  <div class="tag-container"></div>
+                  <span>ค้นหาตามรุ่นรถ</span>
+                </button>
+
+                <div id="car-select-popup">
+                  <section id="brand-list" class="active">
+                    <h6 class="font-medium">ยี่ห้อรถยนต์</h6>
+                    <div class="list">
+                      <button type="button" data-category="brand" data-value="chevrolet" class="option">CHEVROLET</button>
+                      <button type="button" data-category="brand" data-value="ford" class="option">FORD</button>
+                      <button type="button" data-category="brand" data-value="honda" class="option">HONDA</button>
+                      <button type="button" data-category="brand" data-value="hyundai" class="option">HYUNDAI</button>
+                      <button type="button" data-category="brand" data-value="isuzu" class="option">ISUZU</button>
+                      <button type="button" data-category="brand" data-value="kia" class="option">KIA</button>
+                      <button type="button" data-category="brand" data-value="mazda" class="option">MAZDA</button>
+                      <button type="button" data-category="brand" data-value="mitsubishi" class="option">MITSUBISHI</button>
+                      <button type="button" data-category="brand" data-value="nissan" class="option">NISSAN</button>
+                      <button type="button" data-category="brand" data-value="suzuki" class="option">SUZUKI</button>
+                      <button type="button" data-category="brand" data-value="toyota" class="option">TOYOTA</button>
+                    </div>
+                  </section>
+                  <section id="model-list">
+                    <h6 class="font-medium">รุ่นรถยนต์</h6>
+                    <div class="list"></div>
+                  </section>
+                  <section id="year-list">
+                    <h6 class="font-medium">ปีรถยนต์</h6>
+                    <div class="list"></div>
+                  </section>
+                </div>
+              </div>
+              <button class="btn-primary px-16 text-lg" type="submit">ค้นหา</button>
+            </section>
+
+            <!-- Search by PartName -->
+            <section id="part-name-search">
+              <div class="relative">
+                <div class="w-full relaitve">
+                  <input type="text" placeholder="ค้นหาสินค้า" />
+                  <div class="svg-icon size-5 bg-black absolute top-1/2 -translate-y-1/2 right-4 z-1" data-src="../icons/search.svg">asdad</div>
+                </div>
+
+                <div id="filter-result">
+                  <div class="alert active">กรุณาค้นหาตั้งแต่ 2 ตัวอักษรขึ้นไป</div>
+
+                  <section class="category">
+                    <hgroup>ผ้าเบรค</hgroup>
+                    <a href="" class="result-item">
+                      <img src="./images/products/1. ATE BRAKE PADS.jpg" alt="" width="80" height="80" />
+                      <span class="name"> Ate 13.0460-5781.2 Car Front and Rear Brake Pad Set</span>
+                    </a>
+                    <a href="" class="result-item">
+                      <img src="./images/products/1. ATE BRAKE PADS.jpg" alt="" width="80" height="80" />
+                      <span class="name"> Ate 13.0460-5781.2 Car Front and Rear Brake Pad Set</span>
+                    </a>
+                    <a href="" class="result-item">
+                      <img src="./images/products/1. ATE BRAKE PADS.jpg" alt="" width="80" height="80" />
+                      <span class="name"> Ate 13.0460-5781.2 Car Front and Rear Brake Pad Set</span>
+                    </a>
+                    <a href="" class="result-item">
+                      <img src="./images/products/1. ATE BRAKE PADS.jpg" alt="" width="80" height="80" />
+                      <span class="name"> Ate 13.0460-5781.2 Car Front and Rear Brake Pad Set</span>
+                    </a>
+                    <a href="" class="result-item">
+                      <img src="./images/products/1. ATE BRAKE PADS.jpg" alt="" width="80" height="80" />
+                      <span class="name"> Ate 13.0460-5781.2 Car Front and Rear Brake Pad Set</span>
+                    </a>
+                    <a href="" class="result-item">
+                      <img src="./images/products/1. ATE BRAKE PADS.jpg" alt="" width="80" height="80" />
+                      <span class="name"> Ate 13.0460-5781.2 Car Front and Rear Brake Pad Set</span>
+                    </a>
+                    <a href="" class="result-item">
+                      <img src="./images/products/1. ATE BRAKE PADS.jpg" alt="" width="80" height="80" />
+                      <span class="name"> Ate 13.0460-5781.2 Car Front and Rear Brake Pad Set</span>
+                    </a>
+
+                    <a href="" class="result-item">
+                      <img src="./images/products/1. ATE BRAKE PADS.jpg" alt="" width="80" height="80" />
+                      <span class="name"> Ate 13.0460-5781.2 Car Front and Rear Brake Pad Set</span>
+                    </a>
+                  </section>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+
+        <img src="./images/home/hero.jpg" class="w-full h-full absolute top-0 left-0 -z-1 object-cover object-cover opacity-25" alt="" />
+      </header>
+
+      <!-- Product Section -->
+      <section id="product-section" class="overflow-hidden space-y-9">
+        <hgroup class="container flex justify-between items-center">
+          <h3 class="font-semibold text-2xl">สินค้าของเรา</h3>
+          <a href="" class="btn-stroke-primary">ดูสินค้าทั้งหมด</a>
+        </hgroup>
+
+        <div id="product-categories" class="container border-b border-primary flex overflow-x-auto">
+          <button type="button" data-category="brake-pad" class="btn active">
+            <div data-src="../icons/brake-pad.svg" class="svg-icon size-8 bg-white"></div>
+            ผ้าเบรค
+          </button>
+          <button type="button" data-category="brake-disc" class="btn">
+            <div data-src="../icons/brake.svg" class="svg-icon size-8 bg-white"></div>
+            จานเบรก
+          </button>
+          <button type="button" data-category="brake-fluid" class="btn">
+            <div data-src="../icons/brake-oil.svg" class="svg-icon size-8 bg-white"></div>
+            น้ำมันเบรค และ สินค้าเบรกอื่นๆ
+          </button>
+          <button type="button" data-category="tire-gauge" class="btn">
+            <div data-src="../icons/check-tire.svg" class="svg-icon size-8 bg-white"></div>
+            เครื่อง ตรวจวัดลมยาง
+          </button>
+          <button type="button" data-category="windscreen" class="btn">
+            <div data-src="../icons/windscreen.svg" class="svg-icon size-8 bg-white"></div>
+            ใบปัดน้ำฝน
+          </button>
+        </div>
+
+        <div id="product-slide" class="swiper container !overflow-visible">
+          <div class="swiper-wrapper">
+            <!-- 1. Brake-pad -->
+            <a href="" data-category="brake-pad" class="product-card swiper-slide">
+              <img src="./images/products/1. ATE BRAKE PADS.jpg" alt="" />
+              <div class="info">
+                <div>
+                  <h5 class="name">ATE BRAKE PADS</h5>
+                  <p class="desc">ผ้าดีสเบรคคุณภาพสูง จากประเทศเยอรมัน ให้ความรู้สึกหยุดรถได้อย่างมันใจ ปลอดภัยด้วยเทคโนโลยีสูงสุด เป็นมิตรต่อสิ่งแวดล้อม</p>
+                </div>
+                <div class="arrow"></div>
+              </div>
+            </a>
+
+            <!-- 2. Brake-disc -->
+            <a href="" data-category="brake-disc" class="product-card swiper-slide">
+              <img src="./images/products/2. ATE BRAKE DISCS.jpg" alt="" />
+              <div class="info">
+                <div>
+                  <h5 class="name">ATE BRAKE DISCS</h5>
+                  <p class="desc">จานดีสเบรคของ ATE ได้รับมาตรฐาน ECE-R90 ซึ่งเป็นมาตรฐานความปลอดภัยสูงสุดจากยุโรป</p>
+                </div>
+                <div class="arrow"></div>
+              </div>
+            </a>
+
+            <!-- 3. Brake-fluid -->
+            <a href="" data-category="brake-fluid" class="product-card swiper-slide">
+              <img src="./images/products/3. ATE BRAKE FLUIDS.jpg" alt="" />
+              <div class="info">
+                <div>
+                  <h5 class="name">ATE BRAKE FLUIDS</h5>
+                  <p class="desc">น้ำมันเบรคคุณภาพสูงจากประเทศเยอรมัน ที่ผู้ใช้รถยนต์ทั่วโลก ให้การยอมรับ</p>
+                </div>
+                <div class="arrow"></div>
+              </div>
+            </a>
+            <a href="" data-category="brake-fluid" class="product-card swiper-slide">
+              <img src="./images/products/4. ATE PLASTILUBE.jpg" alt="" />
+              <div class="info">
+                <div>
+                  <h5 class="name">ATE PLASTILUBE</h5>
+                  <p class="desc">ป้องกันเสียง จากการเสียดสีสูตรออกแบบมาเพื่อป้องกันเสียงรบกวนจากแผ่นเบรก</p>
+                </div>
+                <div class="arrow"></div>
+              </div>
+            </a>
+            <a href="" data-category="brake-fluid" class="product-card swiper-slide">
+              <img src="./images/products/5. ATE BRAKE CYLINDER PASTE.jpg" alt="" />
+              <div class="info">
+                <div>
+                  <h5 class="name">ATE BRAKE CYLINDER PASTE</h5>
+                  <p class="desc">ใช้สำหรับการประกอบซ่อม ชิ้นส่วนภายในระบบเบรคไฮดรอลิก เพื่อลดแรงเสียดทานระหว่างชิ้นส่วนโลหะกับชิ้นส่วนยางซีลภายในระบบเบรค</p>
+                </div>
+                <div class="arrow"></div>
+              </div>
+            </a>
+
+            <!-- 4. Tire Gauge -->
+
+            <a href="" data-category="tire-gauge" class="product-card swiper-slide">
+              <img src="./images/products/6. TPMS CONTINENTAL CONTIS-C30.jpg" alt="" />
+              <div class="info">
+                <div>
+                  <h5 class="name">TPMS Continental Contis C-30</h5>
+                  <p class="desc">สินค้ามาตรฐานสากลด้วยแบรนด์ Continental เป็นผู้ผลิตชิ้นส่วนอุปกรณ์อิเล็กทรอนิกส์ให้กับบริษัทผู้ผลิตรถยนต์ชั้นนำของโลกอย่างแบรนด์ Volkswagen จากประเทศเยอรมัน</p>
+                </div>
+                <div class="arrow"></div>
+              </div>
+            </a>
+            <a href="" data-category="tire-gauge" class="product-card swiper-slide">
+              <img src="./images/products/7. TPMS Safety Alarm System XTP-200.jpg" alt="" />
+              <div class="info">
+                <div>
+                  <h5 class="name">TPMS Safety Alarm System XTP - 200 (5 SENSOR)</h5>
+                  <p class="desc">จอแสดงผล สามารถแสดงผลล้อที่ 5 (ล้ออะไหล่) ไปพร้อมกับล้ออื่นๆ ลดความเสี่ยงเมื่อรถเกิดอุบัติเหตุ</p>
+                </div>
+                <div class="arrow"></div>
+              </div>
+            </a>
+            <a href="" data-category="tire-gauge" class="product-card swiper-slide">
+              <img src="./images/products/8. TPMS PROGRAMMING XTP-SP820.jpg" alt="" />
+              <div class="info">
+                <div>
+                  <h5 class="name">TPMS PROGRAMMING XTP - SP820 และ UNIVERSAL SENSOR TPS-800-1 </h5>
+                  <p class="desc"></p>
+                </div>
+                <div class="arrow"></div>
+              </div>
+            </a>
+
+            <!-- 5. windscreen -->
+            <a href="" data-category="windscreen" class="product-card swiper-slide">
+              <img src="./images/products/9. Continental AQUACTRL2.jpg" alt="" />
+              <div class="info">
+                <div>
+                  <h5 class="name">Continental AQUACTRL2 windshield wipers Multiclip</h5>
+                  <p class="desc">ใบปัดน้ำฝนคุณภาพสูง เคลือบสารแกรไฟต์ ปัดสะอาด เรียบลื่น ไร้เสียงรบกวน</p>
+                </div>
+                <div class="arrow"></div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Arrow -->
+          <div class="absolute w-full h-full top-0 flex max-2xl:hidden justify-between items-center">
+            <div class="swiper-button-prev !-left-12">
+              <img src="./icons/slide-prev.svg" width="40" height="40" alt="" />
+            </div>
+            <div class="swiper-button-next !-right-12">
+              <img src="./icons/slide-next.svg" width="40" height="40" alt="" />
+            </div>
+          </div>
+
+          <div class="swiper-pagination mt-9 mx-auto"></div>
+        </div>
+      </section>
+
+      <!-- Warranty Section -->
+      <section class="warranty-section container max-lg:max-w-2xl">
+        <div class="max-lg:flex-col flex w-full text-white rounded-xl overflow-hidden">
+          <figure class="flex-1 bg-black relative">
+            <img src="./images/home/warrnty-section.png" class="w-full h-full object-cover" alt="" />
+          </figure>
+          <article class="bg-[#3d3a3b] flex-1 py-9 px-10 space-y-6">
+            <h4>เงื่อนไขการรับประกัน</h4>
+            <div class="space-y-4 max-w-[52ch] max-h-104 pr-2 w-full text-balance overflow-y-auto">
+              <p><b>ความครอบคลุมการรับประกัน</b></p>
+              <div>
+                <p>1. สินค้าที่ซื้อผ่านตัวแทนจำหน่ายจาก บริษัท เบสท์ไทร์(ไทยแลนด์) จำกัด เท่านั้น</p>
+                <p>2. การรับประกันสินค้า รวมถึงการเปลี่ยน / คืน ขึ้นอยู่กับการพิจารณาของทางบริษัทฯ</p>
+                <p>3. เงื่อนไขการรับประกัน เป็นไปตามที่บริษัทกำหนด</p>
+              </div>
+
+              <p><b>เงื่อนไขการรับประกัน และ ข้อควรระวัง</b></p>
+
+              <p>สินค้าภายใต้ บริษัท เบสท์ไทร์(ไทยแลนด์) จำกัด มีการรับประกัน นับตั้งแต่วันแรกที่ซื้อสินค้า</p>
+
+              <p>
+                <b>สำหรับสินค้าหมวดอีเลคโทรนิค <span class="text-primary">ต้องลงทะเบียนรับประกันสินค้า</span></b>
+              </p>
+
+              <div>
+                <p>1. เครื่องตรวจวัดลมยางดิจิทัล คอนติเนนทอล คอนทิสซี30 CONTINENTAL CONTIS C-30 รับประกัน 2ปี นับจากใบเสร็จซื้อสินค้า</p>
+                <p>2. อุปกรณ์อ่านเซ็นเซอร์วัดความดันลมยาง TPMS</p>
+              </div>
+            </div>
+            <a href="" class="btn-primary flex flex-col font-medium w-fit py-1.5 px-12">
+              <span>ลงทะเบียนรับประกันสินค้า</span>
+              <span class="text-xs">สำหรับสินค้าหมวด อิเลคโทรนิค</span>
+            </a>
+          </article>
+        </div>
+      </section>
+      <!-- Quote Section -->
+      <section id="quote-section" class="container">
+        <blockquote class="rounded-xl bg-black text-white overflow-hidden relative z-10">
+          <div class="lg:px-28 sm:px-12 px-8 py-20 space-y-1">
+            <p class="">เพราะทุกจังหวะเบรก คือชีวิตของคุณ</p>
+            <p class="text-2xl font-semibold max-w-[27ch]">พร้อมอะไหล่คุณภาพที่ผ่านการทดสอบจริง เพื่อความปลอดภัยของคุณในทุกการเดินทาง</p>
+          </div>
+
+          <img src="./images/home/quote-section.png" class="w-full h-full absolute top-0 left-0 -z-1 object-cover opacity-75" alt="" />
+        </blockquote>
+      </section>
+
+      <!-- News Slide Section -->
+      <section id="news-section" class="space-y-9 overflow-hidden container">
+        <hgroup class="flex justify-between items-center">
+          <h3 class="font-semibold text-2xl">ข่าวสารล่าสุด</h3>
+          <a href="" class="btn-stroke-primary">ดูข่าวสารทั้งหมด</a>
+        </hgroup>
+
+        <div class="flex items-center">
+          <button type="button" class="relative bottom-8 -left-6 news-prev size-10 shrink-0 max-xl:hidden">
+            <img src="./icons/slide-prev.svg" width="40" height="40" alt="" />
+          </button>
+          <div id="news-slide" class="swiper flex-1 max-w-full max-lg:!overflow-visible">
+            <div class="swiper-wrapper">
+              <a href="" class="blog-card swiper-slide">
+                <figure>
+                  <img src="./images/home/blog-1.jpg" alt="" />
+                </figure>
+                <div>
+                  <p class="date">12 สิงหาคม 2568</p>
+                  <h6 class="name">กิจกรรมแข่งรถออฟโรด สนับสนุนโดยแบรนด์ในเครือ BestPart</h6>
+                </div>
+              </a>
+              <a href="" class="blog-card swiper-slide">
+                <figure>
+                  <img src="./images/home/blog-1.jpg" alt="" />
+                </figure>
+                <div>
+                  <p class="date">12 สิงหาคม 2568</p>
+                  <h6 class="name">กิจกรรมแข่งรถออฟโรด สนับสนุนโดยแบรนด์ในเครือ BestPart</h6>
+                </div>
+              </a>
+              <a href="" class="blog-card swiper-slide">
+                <figure>
+                  <img src="./images/home/blog-1.jpg" alt="" />
+                </figure>
+                <div>
+                  <p class="date">12 สิงหาคม 2568</p>
+                  <h6 class="name">กิจกรรมแข่งรถออฟโรด สนับสนุนโดยแบรนด์ในเครือ BestPart</h6>
+                </div>
+              </a>
+              <a href="" class="blog-card swiper-slide">
+                <figure>
+                  <img src="./images/home/blog-1.jpg" alt="" />
+                </figure>
+                <div>
+                  <p class="date">12 สิงหาคม 2568</p>
+                  <h6 class="name">กิจกรรมแข่งรถออฟโรด สนับสนุนโดยแบรนด์ในเครือ BestPart</h6>
+                </div>
+              </a>
+              <a href="" class="blog-card swiper-slide">
+                <figure>
+                  <img src="./images/home/blog-1.jpg" alt="" />
+                </figure>
+                <div>
+                  <p class="date">12 สิงหาคม 2568</p>
+                  <h6 class="name">กิจกรรมแข่งรถออฟโรด สนับสนุนโดยแบรนด์ในเครือ BestPart</h6>
+                </div>
+              </a>
+              <a href="" class="blog-card swiper-slide">
+                <figure>
+                  <img src="./images/home/blog-1.jpg" alt="" />
+                </figure>
+                <div>
+                  <p class="date">12 สิงหาคม 2568</p>
+                  <h6 class="name">กิจกรรมแข่งรถออฟโรด สนับสนุนโดยแบรนด์ในเครือ BestPart</h6>
+                </div>
+              </a>
+              <a href="" class="blog-card swiper-slide">
+                <figure>
+                  <img src="./images/home/blog-1.jpg" alt="" />
+                </figure>
+                <div>
+                  <p class="date">12 สิงหาคม 2568</p>
+                  <h6 class="name">กิจกรรมแข่งรถออฟโรด สนับสนุนโดยแบรนด์ในเครือ BestPart</h6>
+                </div>
+              </a>
+            </div>
+
+            <div class="swiper-pagination mt-9 mx-auto"></div>
+          </div>
+          <button type="button" class="news-next relative bottom-8 -right-6 size-10 shrink-0 max-xl:hidden">
+            <img src="./icons/slide-next.svg" width="40" height="40" alt="" />
+          </button>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about-section" class="bg-black text-white relative z-10">
+        <div class="container py-32 space-y-8">
+          <h3 class="font-bold">เกี่ยวกับเรา</h3>
+
+          <p class="max-w-3xl text-xl">
+            <b>BESTPART (เบสท์พาร์ท)</b> เป็นผู้จัดจำหน่ายชิ้นส่วนอะไหล่ยานยนต์ และอุปกรณ์ตกแต่งรถยนต์แบรนด์ชั้นนำของโลกและแบรนด์ที่ได้มาตรฐาน OEM ภายใต้
+            <b>บริษัท เบสท์ไทร์ (ไทยแลนด์) จำกัด</b> ที่มีประสบการณ์และมีความเชี่ยวชาญในกลุ่มธุรกิจยานยนต์ อีกทั้ง<b
+              >เบสท์พาร์ทได้รับการแต่งตั้งให้เป็นตัวแทนจำหน่ายอย่างเป็นทางการ ของอะไหล่ทดแทนแท้จากแบรนด์คอนติเนนทอล และยังเป็นตัวแทนจำหน่ายอย่างเป็นทางการของระบบเบรคแบรนด์อาเต้
+              แบรนด์สินค้าคุณภาพสูงจากประเทศเยอรมัน ที่ทั่วโลกให้การยอมรับ</b
+            >
+          </p>
+
+          <div class="flex items-center gap-x-4">
+            <img src="./images/brands/continental.svg" class="w-48" alt="" width="200" height="78" />
+            <img src="./images/brands/ate.svg" class="w-48" alt="" width="200" height="78" />
+          </div>
+        </div>
+
+        <img src="./images/home/about-section.png" class="w-full h-full absolute top-0 left-0 -z-1 object-cover" alt="" />
+      </section>
+    </main>
     <footer-component></footer-component>
   </body>
 </html>

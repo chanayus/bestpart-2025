@@ -2,6 +2,8 @@
 
 @theme inline {
   --color-primary: var(--primary);
+  --color-primary-darken: var(--primary-darken);
+  --color-gray: var(--gray);
 
   --breakpoint-sm: 641px;
   --breakpoint-md: 769px;
@@ -112,7 +114,7 @@
 @utility container {
   padding-inline: 1.25rem;
   margin-inline: auto;
-  max-width: 1320px;
+  max-width: 1280px;
 
   @variant max-2xl {
     max-width: 1240px;
@@ -128,5 +130,37 @@
 
   @variant max-md {
     padding-inline: 1.25rem;
+  }
+}
+
+@layer base {
+  input {
+    @apply py-3 px-6 border rounded-full bg-white w-full;
+    border-color: #d9d9d9;
+    outline: none;
+    transition: box-shadow 0.25s;
+    &::placeholder {
+      color: #3d3a3b;
+      font-weight: 600;
+    }
+    &:focus {
+      box-shadow: 0px 0px 0px 3px var(--color-primary) inset;
+    }
+  }
+  .border {
+    @apply border-gray;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply flex items-center justify-center gap-x-2;
+  }
+  .btn-primary {
+    @apply flex items-center justify-center gap-x-2 py-3 px-6 rounded-full bg-primary text-white transition-colors hover:bg-primary-darken;
+  }
+
+  .btn-stroke-primary {
+    @apply flex items-center justify-center gap-x-2 py-3 px-6 rounded-full bg-transparent text-primary border border-primary transition-colors hover:bg-primary hover:text-white;
   }
 }
