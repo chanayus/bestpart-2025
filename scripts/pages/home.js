@@ -1,7 +1,7 @@
 import Swiper from "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs";
 import { data } from "../../data/cars.js";
 import { removeElement } from "../main.js";
-import { gsap } from "/libs/gsap/all.js";
+import { gsap } from "/libs/gsap/index.js";
 import { ScrollTrigger } from "/libs/gsap/ScrollTrigger.js";
 
 gsap.registerPlugin(ScrollTrigger);

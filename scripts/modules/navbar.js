@@ -1,4 +1,4 @@
-import { gsap } from "/libs/gsap/all.js";
+import { gsap } from "/libs/gsap/index.js";
 
 const mobileNavToggle = document.querySelectorAll(".mobile-nav-toggle");
 const langSwitcher = document.querySelector("#lang-switcher");
