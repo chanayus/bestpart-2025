@@ -196,9 +196,14 @@ const filterResultCategories = filterResult.querySelector(".category");
 searchTypeSwitcher.forEach((el) => {
   el?.addEventListener("click", (e) => {
     searchTypeSwitcher.forEach((el) => el.classList.remove("active"));
+    if (e.target.dataset.type === "car-model") {
+      carModelSearch.classList.add("active");
+      partNameSearch.classList.remove("active");
+    } else {
+      carModelSearch.classList.remove("active");
+      partNameSearch.classList.add("active");
+    }
     e.target.classList.add("active");
-    carModelSearch.classList.toggle("active");
-    partNameSearch.classList.toggle("active");
   });
 });
 
