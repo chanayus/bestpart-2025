@@ -115,7 +115,8 @@ header {
         font-size: 0.875rem;
         padding: 0.125rem 1rem;
         font-weight: 500;
-        flex-grow: 1;
+        /* flex-grow: 1; */
+        width: fit-content;
       }
 
       & h6 {
