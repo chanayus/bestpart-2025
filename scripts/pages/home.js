@@ -16,7 +16,7 @@ gsap
   .timeline({
     scrollTrigger: { trigger: "#quote-section", start: "-40% center" },
   })
-  .fromTo("#quote-section img", { autoAlpha: 0 }, { autoAlpha: 1 })
+  .fromTo("#quote-section img", { autoAlpha: 0 }, { autoAlpha: 0.75 })
   .fromTo("#quote-section p", { autoAlpha: 0, x: -25 }, { autoAlpha: 1, x: 0, stagger: 0.2 }, "-=0.15");
 
 gsap

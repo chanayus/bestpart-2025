@@ -146,5 +146,6 @@
     -webkit-line-clamp: 2;
     font-weight: 600;
     transition: color 0.25s;
+    font-size: 1.125rem;
   }
 }

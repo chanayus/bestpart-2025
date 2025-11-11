@@ -132,3 +132,20 @@ ol li {
   pointer-events: none;
   transition: background-color 0.25s;
 }
+
+nav {
+  & #lang-switcher {
+    & .dropdown {
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity 0.25s,
+        visibility 0.25s;
+    }
+
+    &.active .dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
