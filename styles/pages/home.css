@@ -63,12 +63,12 @@ header {
   }
 
   & .tag-container {
-    display: flex;
+    display: none;
     gap: 0.5rem;
     align-items: center;
     width: fit-content;
-    &:not(:has(.tag)) {
-      display: none;
+    &:has(.tag) {
+      display: flex;
     }
     isolation: isolate;
   }
