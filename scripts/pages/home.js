@@ -234,8 +234,8 @@ const productSlide = new Swiper("#product-slide", {
     type: "progressbar",
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".product-next",
+    prevEl: ".product-prev",
   },
   breakpoints: {
     0: {

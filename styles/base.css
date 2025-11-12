@@ -130,10 +130,12 @@ ol li {
   mask: var(--src) no-repeat center;
   mask-size: contain;
   pointer-events: none;
-  transition: background-color 0.25s, opacity 0.25s;
-  
+  transition:
+    background-color 0.25s,
+    opacity 0.25s;
+
   &:not([style]) {
-   opacity: 0;
+    opacity: 0;
   }
 }
 
@@ -151,5 +153,13 @@ nav {
       opacity: 1;
       visibility: visible;
     }
+  }
+}
+
+.link {
+  transition: color 0.25s;
+
+  &:hover {
+    color: var(--primary);
   }
 }

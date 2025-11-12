@@ -2,11 +2,11 @@ class Footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = /*html*/ `
         <footer id="footer" class="w-full flex max-lg:flex-col">
-            <div class="flex-1 aspect-video">
+            <div class="flex-1 aspect-video relative">
               <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.3769686345677!2d100.43366209999999!3d13.8163882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2916564905a3b%3A0xc5e3e5435686e0b5!2z4Lia4LiI4LiBLiDguYDguJrguKrguJfguYzguYTguJfguKPguYwgKOC5hOC4l-C4ouC5geC4peC4meC4lOC5jCk!5e0!3m2!1sth!2sth!4v1762247453768!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="flex-1 flex bg-black container text-white sm:justify-center items-center py-16">
-              <div class="space-y-6">
+            <div class="flex-1 flex bg-black  text-white sm:justify-center items-center py-16">
+              <div class="space-y-6 container sm:w-fit">
                 <img src="../images/logo.svg" width="243" height="32" class="w-48" alt="" />
                 <address class="not-italic">
                   <p class="font-semibold text-xl">บริษัท เบสท์ไทร์ (ไทยแลนด์) จำกัด</p>
