@@ -135,7 +135,7 @@
 
 @layer base {
   input {
-    @apply py-3 px-6 border rounded-full bg-white w-full;
+    @apply py-3 px-6 rounded-full bg-white w-full;
     border-color: #d9d9d9;
     outline: none;
     transition: box-shadow 0.25s;
