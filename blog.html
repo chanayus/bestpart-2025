@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>BESTPART</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- Libs -->
+    <link rel="stylesheet" href="./libs/swiper/swiper.css" />
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.webp" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/pages/blog.css" />
+
+    <!-- Component -->
+    <script src="./components/navbar.js"></script>
+    <script src="./components/footer.js"></script>
+    <script src="./components/backToTop.js"></script>
+
+    <!-- Script -->
+    <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/pages/blog.js"></script>
+  </head>
+  <body>
+    <back-to-top-component></back-to-top-component>
+    <navbar-component></navbar-component>
+
+    <div data-opened="false" class="modal">
+      <button type="button" class="close-modal-button">
+        <img src="./icons/x.svg" alt="" class="w-full h-full object-contain" />
+      </button>
+      <img src="" class="modal-content" alt="" />
+    </div>
+
+    <main class="flex-1 w-full h-full flex overflow-hidden flex-col gap-y-14 lg:pt-15 pt-17">
+      <section class="breadcrumb">
+        <div class="container"><a href="./index.html">Home</a> / ATE BRAKE PADS</div>
+      </section>
+
+      <hgroup class="container lg:px-0 max-w-4xl space-y-7">
+        <a href="" class="flex items-center gap-x-2 text-stone-500 hover:underline">
+          <div class="svg-icon bg-stone-500 size-4" data-src="../icons/arrow-left.svg"></div>
+          Back
+        </a>
+
+        <h4 class="font-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+
+        <section class="flex items-center justify-between">
+          <div class="flex items-center gap-x-1.5 text-stone-500">
+            <div class="svg-icon bg-stone-500 size-4" data-src="../icons/calendar.svg"></div>
+            <span>12 สิงหาคม 2568</span>
+          </div>
+          <div class="flex items-center gap-x-2.5">
+            <span class="text-stone-500">Share:</span>
+            <a href="" class="hover:opacity-75 transition-opacity">
+              <div class="svg-icon bg-primary size-6" data-src="../icons/facebook.svg"></div>
+            </a>
+            <a href="" class="hover:opacity-75 transition-opacity">
+              <div class="svg-icon bg-primary size-6" data-src="../icons/x-twitter.svg"></div>
+            </a>
+          </div>
+        </section>
+      </hgroup>
+
+      <article class="container lg:px-0 max-w-4xl prose pb-16 border-b border-black/20">
+        <img src="./images/home/blog-1.webp" alt="" />
+
+        <h3 class="text-xl">
+          In a world where time is the most valuable resource, a new AI chatbot is changing the way individuals and teams approach their daily tasks. Designed to communicate like a human and assist
+          like a digital genius, this powerful new tool is reshaping productivity across industries.
+        </h3>
+
+        <p>
+          Etiam molestie, neque vitae vehicula luctus, lectus ipsum convallis sapien, eu iaculis elit neque vel odio. Quisque bibendum velit sit amet placerat egestas. Morbi gravida, libero eget
+          sagittis molestie, lectus justo varius nulla, vitae interdum neque nisl sed nunc. Phasellus gravida ipsum magna, vel mollis urna rutrum quis. Vivamus feugiat diam augue, id convallis augue
+          aliquam quis. Nunc vel libero cursus, interdum odio sit amet, commodo nunc. Morbi suscipit neque metus, accumsan pretium tortor sollicitudin vel. Cras ac sapien nunc. Vivamus efficitur sem
+          quis elit volutpat, nec gravida urna fermentum. Vestibulum nec metus varius, efficitur turpis eu, finibus ipsum.
+        </p>
+
+        <p>
+          Nunc sollicitudin vitae eros ut porta. Donec nibh mi, feugiat nec orci vitae, tempus varius nisl. Donec consectetur dapibus purus, a semper urna hendrerit ut. Sed in semper metus. Aliquam
+          mattis lobortis velit, vitae efficitur mi commodo at. Vestibulum eget tortor quis diam pellentesque blandit in ac ante. Cras placerat ac nisi in convallis. Curabitur eget tristique enim.
+        </p>
+
+        <p>
+          Nulla facilisi. Praesent feugiat libero id felis pharetra dictum et eget massa. Vestibulum in accumsan ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec sodales, sem
+          non placerat sollicitudin, neque sapien ullamcorper dui, vel porttitor dolor lectus at arcu. Nam ultricies lorem sit amet auctor laoreet. Etiam urna augue, sollicitudin vitae ornare eget,
+          dignissim quis erat. Aenean felis odio, aliquet nec sodales nec, iaculis sed mauris. Proin scelerisque tempor ex eget vestibulum.
+        </p>
+      </article>
+
+      <div id="image-slide" class="swiper max-lg:!px-4 flex-1 container space-y-8 !overflow-visible">
+        <div class="swiper-wrapper">
+          <figure class="swiper-slide">
+            <img src="./images/home/blog-1.webp" alt="" />
+
+            <button class="zoom-btn" data-src="./images/home/blog-1.webp" data-modal-target=".modal">
+              <img src="./icons/zoom.svg" alt="" width="18" height="18" />
+            </button>
+          </figure>
+          <figure class="swiper-slide">
+            <img src="./images/home/blog-1.webp" alt="" />
+
+            <button class="zoom-btn" data-src="./images/home/blog-1.webp" data-modal-target=".modal">
+              <img src="./icons/zoom.svg" alt="" width="18" height="18" />
+            </button>
+          </figure>
+          <figure class="swiper-slide">
+            <img src="./images/home/blog-1.webp" alt="" />
+
+            <button class="zoom-btn" data-src="./images/home/blog-1.webp" data-modal-target=".modal">
+              <img src="./icons/zoom.svg" alt="" width="18" height="18" />
+            </button>
+          </figure>
+          <figure class="swiper-slide">
+            <img src="./images/home/blog-1.webp" alt="" />
+
+            <button class="zoom-btn" data-src="./images/home/blog-1.webp" data-modal-target=".modal">
+              <img src="./icons/zoom.svg" alt="" width="18" height="18" />
+            </button>
+          </figure>
+          <figure class="swiper-slide">
+            <img src="./images/home/blog-1.webp" alt="" />
+
+            <button class="zoom-btn" data-src="./images/home/blog-1.webp" data-modal-target=".modal">
+              <img src="./icons/zoom.svg" alt="" width="18" height="18" />
+            </button>
+          </figure>
+          <figure class="swiper-slide">
+            <img src="./images/home/blog-1.webp" alt="" />
+
+            <button class="zoom-btn" data-src="./images/home/blog-1.webp" data-modal-target=".modal">
+              <img src="./icons/zoom.svg" alt="" width="18" height="18" />
+            </button>
+          </figure>
+          <figure class="swiper-slide">
+            <img src="./images/home/blog-1.webp" alt="" />
+
+            <button class="zoom-btn" data-src="./images/home/blog-1.webp" data-modal-target=".modal">
+              <img src="./icons/zoom.svg" alt="" width="18" height="18" />
+            </button>
+          </figure>
+        </div>
+
+        <section class="flex items-center justify-center gap-x-8">
+          <div class="swiper-pagination"></div>
+
+          <div class="flex items-center gap-x-4 max-xl:hidden">
+            <button type="button" class="image-prev btn-rounded-gray">
+              <img src="./icons/arrow-left.svg" width="40" height="40" alt="" />
+            </button>
+
+            <button type="button" class="image-next btn-rounded-gray">
+              <img src="./icons/arrow-right.svg" width="40" height="40" alt="" />
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer-component></footer-component>
+  </body>
+</html>

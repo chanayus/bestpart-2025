@@ -4,7 +4,7 @@
     {
       "label": "Watch Tailwind CSS",
       "type": "shell",
-      "command": "npx @tailwindcss/cli -i ./styles/tailwind/input.css -o ./styles/tailwind/output.css --watch",
+      "command": "npx @tailwindcss/cli -i ./styles/tailwind/input.css -o ./styles/tailwind/output.css --watch --minify",
       "problemMatcher": []
     },
     {
@@ -14,4 +14,3 @@
     }
   ]
 }
-

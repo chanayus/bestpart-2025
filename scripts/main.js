@@ -17,3 +17,39 @@ export const removeElement = (el) => {
     { once: true }
   );
 };
+
+// Scroll to Top
+
+const backToTop = document.querySelector("#back-to-top");
+
+const circle = backToTop.querySelector("#back-to-top circle");
+
+if (circle) {
+  const radius = circle.r.baseVal.value;
+  const circumference = 2 * Math.PI * radius;
+
+  circle.style.strokeDasharray = `${circumference}`;
+  circle.style.strokeDashoffset = `${circumference}`;
+
+  function updateProgress() {
+    if (window.scrollY > 100) {
+      backToTop.classList.add("visible");
+    } else {
+      backToTop.classList.remove("visible");
+    }
+
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = Math.min(Math.max(scrollTop / docHeight, 0), 1);
+
+    const offset = circumference - scrollPercent * circumference;
+    circle.style.strokeDashoffset = offset;
+  }
+
+  window.addEventListener("scroll", updateProgress);
+  updateProgress();
+}
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});

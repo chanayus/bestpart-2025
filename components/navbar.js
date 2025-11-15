@@ -11,7 +11,7 @@ class Navbar extends HTMLElement {
     this.innerHTML = /*html*/ `
       <nav id="navbar" class=" fixed top-0 left-0 w-full bg-black text-white  z-30">
         <div class="container flex justify-between items-center py-4">
-            <a href="">
+            <a href="../index.html">
               <img src="../images/logo.svg" width="243" height="32" alt="" class="lg:w-60 w-42" />
             </a>
             <div class="hidden lg:flex gap-8 [&_a]:transition-opacity [&_a:hover]:opacity-75">

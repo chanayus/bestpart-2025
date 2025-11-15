@@ -282,7 +282,7 @@ filterByCategory("brake-pad");
 const newsSlide = new Swiper("#news-slide", {
   // loop: true,
   slidesPerView: 3,
-  spaceBetween: 30,
+  spaceBetween: 16,
   pagination: {
     el: ".swiper-pagination",
     type: "progressbar",

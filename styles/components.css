@@ -149,3 +149,12 @@
     font-size: 1.125rem;
   }
 }
+
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  background-color: #99999942;
+  color: #999;
+  padding-block: 0.625rem;
+  font-size: 14px;
+}

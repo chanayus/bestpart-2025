@@ -1,0 +1,75 @@
+#image-slide {
+  & .swiper-slide {
+    aspect-ratio: 16/9;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid transparent;
+    box-sizing: border-box;
+    transition: border-color 0.25s;
+    &:hover {
+      border-color: var(--primary);
+      & .zoom-btn {
+        transform: translateX(0);
+      }
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    & .zoom-btn {
+      background: rgba(0, 0, 0, 0.5);
+      width: 2.125rem;
+      height: 2.125rem;
+      bottom: 0.75rem;
+      right: 1rem;
+      padding: 0.5rem;
+      position: absolute;
+      transition: transform 0.25s;
+      transform: translateX(3.5rem);
+    }
+  }
+}
+
+.modal {
+  /* display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+
+  z-index: 500;
+  top: 0;
+  left: 0;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & img {
+    width: 100%;
+    max-width: 80rem;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+  }
+
+  & .close-modal-button {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+}

@@ -15,116 +15,6 @@
   --fs-h6: max(1.25rem, 16px);
 }
 
-html {
-  font-size: clamp(14px, 0.84vw, 16px);
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: #000;
-  background: #fff;
-  animation: fade-in 0.35s forwards;
-  background-repeat: no-repeat;
-  position: relative;
-  font-family: "Prompt", sans-serif;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-* {
-  touch-action: manipulation;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  scroll-behavior: smooth;
-  font-smooth: always;
-  text-rendering: optimizeLegibility;
-  touch-action: manipulation;
-}
-
-h1 {
-  font-size: var(--fs-h1);
-}
-
-h2 {
-  font-size: var(--fs-h2);
-}
-
-h3 {
-  font-size: var(--fs-h3);
-}
-
-h4 {
-  font-size: var(--fs-h4);
-}
-
-h5 {
-  font-size: var(--fs-h5);
-}
-
-h6 {
-  font-size: var(--fs-h6);
-}
-
-button {
-  cursor: pointer;
-}
-
-button:disabled {
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-ul li {
-  list-style: disc;
-  margin-left: 2rem;
-}
-
-ol li {
-  list-style: decimal;
-  margin-left: 2rem;
-}
-
-.disabled {
-  pointer-events: none;
-}
-
-/* Scroll bar */
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 999px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.copyright {
-  background: linear-gradient(90deg, #3d3a3b 0%, #000000 100%);
-  color: #959595;
-  font-size: 12px;
-}
-
 .svg-icon {
   -webkit-mask: var(--src) no-repeat center;
   mask: var(--src) no-repeat center;
@@ -139,27 +29,54 @@ ol li {
   }
 }
 
-nav {
-  & #lang-switcher {
-    & .dropdown {
-      opacity: 0;
-      visibility: hidden;
-      transition:
-        opacity 0.25s,
-        visibility 0.25s;
-    }
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  width: 4rem;
+  height: 4rem;
+  border: 3.5px solid #999;
+  border-radius: 999px;
+  transition: transform 0.25s;
+  box-shadow: 1px 1px 0.375rem 0px rgba(0, 0, 0, 0.25);
 
-    &.active .dropdown {
-      opacity: 1;
-      visibility: visible;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(4.5rem);
+  transition:
+    opacity 0.25s,
+    visibility 0.25s,
+    transform 0.25s;
+  &.visible {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+  &:hover {
+    & .svg-icon {
+      transform: translateY(-25%);
     }
   }
-}
+  & svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: rotate(-90deg) scale(1.2);
+    transition: transform 0.25s;
+    & circle {
+      stroke-dasharray: 283; /* 2 * π * 45 ≈ 283 */
+      stroke-dashoffset: 283; /* เริ่มต้นยังไม่ถูกวาด */
+      transition: stroke-dashoffset 0.1s;
+    }
+  }
 
-.link {
-  transition: color 0.25s;
-
-  &:hover {
-    color: var(--primary);
+  & .svg-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.25s;
   }
 }
