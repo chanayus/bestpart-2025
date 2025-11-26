@@ -6,6 +6,9 @@
   --primary: rgba(240, 103, 36, 1);
   --primary-darken: rgb(181, 79, 28);
   --gray: #d9d9d9;
+  --dark-gray: #3d3a3b;
+  --green: rgba(104, 184, 43, 1);
+  --green-darken: rgb(68, 132, 18);
 
   --fs-h1: clamp(32px, 3.33vw, 4rem);
   --fs-h2: clamp(32px, 2.5vw, 3rem);

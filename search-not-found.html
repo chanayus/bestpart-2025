@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>BESTPART</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- Libs -->
+    <link rel="stylesheet" href="./libs/swiper/swiper.css" />
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.webp" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/pages/search-result.css" />
+
+    <!-- Component -->
+    <script src="./components/navbar.js"></script>
+    <script src="./components/footer.js"></script>
+    <script src="./components/backToTop.js"></script>
+
+    <!-- Script -->
+    <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/pages/search-result.js"></script>
+    <!-- <script type="module" src="./scripts/pages/blog.js"></script> -->
+  </head>
+  <body>
+    <back-to-top-component></back-to-top-component>
+    <navbar-component></navbar-component>
+
+    <main class="flex-1 w-full h-full flex flex-col overflow-hidden lg:pt-15 pt-17">
+      <hgroup class="flex text-white">
+        <div class="lg:flex-1 flex-2 bg-primary py-7 flex flex-col lg:items-center">
+          <div class="w-full max-w-fit max-lg:px-6">
+            <p class="lg:text-sm text-xs">ผลการค้นหา:</p>
+            <p class="lg:text-lg text-sm font-medium">HONDA ACCORD 2017</p>
+          </div>
+        </div>
+        <div class="flex-3 py-7 bg-black flex items-center relative">
+          <img src="./images/home/hero.webp" class="absolute w-full h-full object-cover opacity-25" alt="" />
+        </div>
+      </hgroup>
+
+      <section class="flex justify-center items-center container py-72">
+        <div class="text-center space-y-5">
+          <img src="./icons/folder.svg" alt="" class="mx-auto" width="32" height="32" />
+          <hgroup class="space-y-2">
+            <h3 class="text-2xl font-medium">ขออภัยครับ! การค้นหาของคุณไม่ตรงกับสิ่งใดเลย</h3>
+            <p class="text-sm text-dark-gray">โปรดลองใช้คำศัพท์ทั่วไปหรือตรวจสอบการสะกดคำของคุณ</p>
+          </hgroup>
+          <p class="font-medium text-sm text-dark-gray">หรือหากคุณต้องการให้เราช่วยค้นหาสินค้า ที่คุณกำลังมองหาอยู่</p>
+
+          <div class="flex items-center justify-center gap-x-4">
+            <a href="tel:0800565888" class="btn-primary px-8 py-2">
+              <img src="./icons/phone.svg" alt="" width="16" height="16" />
+              080-056-5888
+            </a>
+            <a href="" class="btn-green px-8 py-2"> <img src="./icons/line.svg" alt="" width="18" height="18" />คลิกเพิ่มเพื่อน</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer-component></footer-component>
+  </body>
+</html>

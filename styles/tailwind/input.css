@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
-
-
 @theme inline {
   --color-primary: var(--primary);
   --color-primary-darken: var(--primary-darken);
   --color-gray: var(--gray);
+  --color-green: var(--green);
+  --color-dark-gray: var(--dark-gray);
+  --color-green-darken: var(--green-darken);
 
   --breakpoint-sm: 641px;
   --breakpoint-md: 769px;
@@ -294,6 +295,9 @@
   }
   .btn-primary {
     @apply flex items-center justify-center gap-x-2 py-3 px-6 rounded-full bg-primary text-white transition-colors hover:bg-primary-darken;
+  }
+  .btn-green {
+    @apply flex items-center justify-center gap-x-2 py-3 px-6 rounded-full bg-green text-white transition-colors hover:bg-green-darken;
   }
   .btn-stroke-primary {
     @apply flex items-center justify-center gap-x-2 py-3 px-6 rounded-full bg-transparent text-primary border border-primary transition-colors hover:bg-primary hover:text-white;
