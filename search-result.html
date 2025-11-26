@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>BESTPART</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- Libs -->
+    <link rel="stylesheet" href="./libs/swiper/swiper.css" />
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.webp" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/pages/search-result.css" />
+
+    <!-- Component -->
+    <script src="./components/navbar.js"></script>
+    <script src="./components/footer.js"></script>
+    <script src="./components/backToTop.js"></script>
+
+    <!-- Script -->
+    <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/pages/search-result.js"></script>
+    <!-- <script type="module" src="./scripts/pages/blog.js"></script> -->
+  </head>
+  <body>
+    <back-to-top-component></back-to-top-component>
+    <navbar-component></navbar-component>
+
+    <main class="flex-1 w-full h-full flex flex-col overflow-hidden lg:pt-15 pt-17">
+      <hgroup class="flex text-white">
+        <div class="lg:flex-1 flex-2 bg-primary py-7 flex flex-col lg:items-center">
+          <div class="w-full max-w-fit max-lg:px-6">
+            <p class="lg:text-sm text-xs">ผลการค้นหา:</p>
+            <p class="lg:text-lg text-sm font-medium">HONDA ACCORD 2017</p>
+          </div>
+        </div>
+        <div class="flex-3 py-7 bg-black flex items-center relative">
+          <img src="./images/home/hero.webp" class="absolute w-full h-full object-cover opacity-25" alt="" />
+          <p class="max-lg:text-sm max-w-6xl text-right w-full lg:pr-3 pr-6 relative z-1">ทั้งหมด 20 สินค้า</p>
+        </div>
+      </hgroup>
+
+      <div class="text-white lg:flex flex-[1_1_0]">
+        <aside id="car-selector" class="flex-1 max-lg:py-4">
+          <div id="car-slide" class="swiper vertical-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/cars/city-sedan.png" alt="" />
+                <p>HONDA CITY SEDAN 2019</p>
+              </div>
+
+              <div class="swiper-slide">
+                <img src="./images/cars/civic-fl5.png" alt="" />
+                <p>HONDA CIVIC FL5</p>
+              </div>
+
+              <div class="swiper-slide">
+                <img src="./images/cars/city-hatchback.png" alt="" />
+                <p>HONDA CITY HATCHBACK 2019</p>
+              </div>
+
+              <div class="swiper-slide">
+                <img src="./images/cars/civic-fl5.png" alt="" />
+                <p>HONDA FIT</p>
+              </div>
+            </div>
+
+            <section class="car-slide-arrows flex items-center pointer-events-none z-10 justify-center gap-x-8 absolute top-0 left-0 h-full w-full">
+              <div class="flex lg:flex-col items-center max-w-full w-[70vw] h-96 max-h-full justify-between">
+                <button type="button" class="car-prev pointer-events-auto">
+                  <img src="./icons/arrow-up.svg" width="40" height="40" alt="" class="max-lg:-rotate-90" />
+                </button>
+
+                <button type="button" class="car-next pointer-events-auto">
+                  <img src="./icons/arrow-down.svg" width="40" height="40" alt="" class="max-lg:-rotate-90" />
+                </button>
+              </div>
+            </section>
+          </div>
+        </aside>
+
+        <section class="flex-3">
+          <!-- Brake Pad -->
+          <hgroup class="category" data-target="#break-pad-result">
+            <p class="title">ผ้าเบรค</p>
+            <p class="count">0 สินค้า</p>
+          </hgroup>
+
+          <section id="break-pad-result" class="result-container" data-per-page="1">
+            <div class="result-item">
+              <hgroup class="sub-category">
+                <p class="title">
+                  <img src="./icons/car-front.svg" class="icon" width="24" height="24" alt="" />
+                  หน้า
+                </p>
+              </hgroup>
+
+              <section class="px-6 py-5 flex gap-10 w-full overflow-x-auto">
+                <a href="" class="product-item">
+                  <figure class="thumb">
+                    <img src="./images/products/1. ATE BRAKE PADS.webp" alt="" width="162" height="162" />
+                  </figure>
+                  <div class="content">
+                    <h4 class="title">ATE BRAKE PADS</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="" class="product-item">
+                  <figure class="thumb">
+                    <img src="./images/products/1. ATE BRAKE PADS.webp" alt="" width="162" height="162" />
+                  </figure>
+                  <div class="content">
+                    <h4 class="title">ATE BRAKE PADS</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+              </section>
+
+              <hgroup class="sub-category">
+                <p class="title">
+                  <img src="./icons/car-rear.svg" class="icon" width="24" height="24" alt="" />
+                  หลัง
+                </p>
+              </hgroup>
+
+              <section class="px-6 py-5 flex gap-10 w-full overflow-x-auto">
+                <a href="" class="product-item">
+                  <figure class="thumb">
+                    <img src="./images/products/1. ATE BRAKE PADS.webp" alt="" width="162" height="162" />
+                  </figure>
+                  <div class="content">
+                    <h4 class="title">ATE BRAKE PADS</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="" class="product-item">
+                  <figure class="thumb">
+                    <img src="./images/products/1. ATE BRAKE PADS.webp" alt="" width="162" height="162" />
+                  </figure>
+                  <div class="content">
+                    <h4 class="title">ATE BRAKE PADS</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+              </section>
+            </div>
+            <div class="result-item">
+              <hgroup class="sub-category">
+                <p class="title">
+                  <img src="./icons/car-front.svg" class="icon" width="24" height="24" alt="" />
+                  หน้า
+                </p>
+              </hgroup>
+
+              <section class="px-6 py-5 flex gap-10 w-full overflow-x-auto">
+                <a href="" class="product-item">
+                  <figure class="thumb"></figure>
+                  <div class="content">
+                    <h4 class="title">ก้ามเบรก พรีเมียม สำหรับ D-MAX HI-LANDER MU-X 2016</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="" class="product-item">
+                  <figure class="thumb"></figure>
+                  <div class="content">
+                    <h4 class="title">ก้ามเบรก พรีเมียม สำหรับ D-MAX HI-LANDER MU-X 2016</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+              </section>
+
+              <hgroup class="sub-category">
+                <p class="title">
+                  <img src="./icons/car-rear.svg" class="icon" width="24" height="24" alt="" />
+                  หลัง
+                </p>
+              </hgroup>
+
+              <section class="px-6 py-5 flex gap-10 w-full overflow-x-auto">
+                <a href="" class="product-item">
+                  <figure class="thumb"></figure>
+                  <div class="content">
+                    <h4 class="title">ก้ามเบรก พรีเมียม สำหรับ D-MAX HI-LANDER MU-X 2016</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="" class="product-item">
+                  <figure class="thumb"></figure>
+                  <div class="content">
+                    <h4 class="title">ก้ามเบรก พรีเมียม สำหรับ D-MAX HI-LANDER MU-X 2016</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+              </section>
+            </div>
+          </section>
+
+          <div class="pagination-control" data-target="#break-pad-result">
+            <div class="page-display">1/1</div>
+            <div class="progress"></div>
+            <button class="prev">
+              <img src="./icons/arrow-left.svg" alt="" />
+            </button>
+            <button class="next"><img src="./icons/arrow-right.svg" alt="" /></button>
+          </div>
+
+          <!-- Brake Disc -->
+          <hgroup class="category" data-target="#break-disc-result">
+            <p class="title">จานเบรก</p>
+            <p class="count">0 สินค้า</p>
+          </hgroup>
+
+          <section id="break-disc-result" class="result-container" data-per-page="1">
+            <div class="result-item">
+              <hgroup class="sub-category">
+                <p class="title">
+                  <img src="./icons/car-front.svg" class="icon" width="24" height="24" alt="" />
+                  หน้า
+                </p>
+              </hgroup>
+
+              <section class="px-6 py-5 flex gap-10 w-full overflow-x-auto">
+                <a href="" class="product-item">
+                  <figure class="thumb">
+                    <img src="./images/products/2. ATE BRAKE DISCS.webp" alt="" width="162" height="162" />
+                  </figure>
+                  <div class="content">
+                    <h4 class="title">ATE BRAKE DISCS</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="" class="product-item">
+                  <figure class="thumb">
+                    <img src="./images/products/2. ATE BRAKE DISCS.webp" alt="" width="162" height="162" />
+                  </figure>
+                  <div class="content">
+                    <h4 class="title">ATE BRAKE DISCS</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+              </section>
+
+              <hgroup class="sub-category">
+                <p class="title">
+                  <img src="./icons/car-rear.svg" class="icon" width="24" height="24" alt="" />
+                  หลัง
+                </p>
+              </hgroup>
+
+              <section class="px-6 py-5 flex gap-10 w-full overflow-x-auto">
+                <a href="" class="product-item">
+                  <figure class="thumb">
+                    <img src="./images/products/2. ATE BRAKE DISCS.webp" alt="" width="162" height="162" />
+                  </figure>
+                  <div class="content">
+                    <h4 class="title">ATE BRAKE DISCS</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="" class="product-item">
+                  <figure class="thumb">
+                    <img src="./images/products/2. ATE BRAKE DISCS.webp" alt="" width="162" height="162" />
+                  </figure>
+                  <div class="content">
+                    <h4 class="title">ATE BRAKE DISCS</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+              </section>
+            </div>
+            <div class="result-item">
+              <hgroup class="sub-category">
+                <p class="title">
+                  <img src="./icons/car-front.svg" class="icon" width="24" height="24" alt="" />
+                  หน้า
+                </p>
+              </hgroup>
+
+              <section class="px-6 py-5 flex gap-10 w-full overflow-x-auto">
+                <a href="" class="product-item">
+                  <figure class="thumb"></figure>
+                  <div class="content">
+                    <h4 class="title">ก้ามเบรก พรีเมียม สำหรับ D-MAX HI-LANDER MU-X 2016</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="" class="product-item">
+                  <figure class="thumb"></figure>
+                  <div class="content">
+                    <h4 class="title">ก้ามเบรก พรีเมียม สำหรับ D-MAX HI-LANDER MU-X 2016</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+              </section>
+
+              <hgroup class="sub-category">
+                <p class="title">
+                  <img src="./icons/car-rear.svg" class="icon" width="24" height="24" alt="" />
+                  หลัง
+                </p>
+              </hgroup>
+
+              <section class="px-6 py-5 flex gap-10 w-full overflow-x-auto">
+                <a href="" class="product-item">
+                  <figure class="thumb"></figure>
+                  <div class="content">
+                    <h4 class="title">ก้ามเบรก พรีเมียม สำหรับ D-MAX HI-LANDER MU-X 2016</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="" class="product-item">
+                  <figure class="thumb"></figure>
+                  <div class="content">
+                    <h4 class="title">ก้ามเบรก พรีเมียม สำหรับ D-MAX HI-LANDER MU-X 2016</h4>
+                    <div class="note">
+                      <p class="note-title">หมายเหตุ:</p>
+                      <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                    </div>
+                  </div>
+                </a>
+              </section>
+            </div>
+          </section>
+
+          <div class="pagination-control" data-target="#break-disc-result">
+            <div class="page-display">1/1</div>
+            <div class="progress"></div>
+            <button class="prev">
+              <img src="./icons/arrow-left.svg" alt="" />
+            </button>
+            <button class="next"><img src="./icons/arrow-right.svg" alt="" /></button>
+          </div>
+
+          <!-- Break Fluid -->
+
+          <hgroup class="category" data-target="#brake-fluid-result">
+            <p class="title">นํ้ามันเบรค และ สินค้าเบรกอื่นๆ</p>
+            <p class="count">0 สินค้า</p>
+          </hgroup>
+
+          <section id="brake-fluid-result" class="result-container grid" data-per-page="4">
+            <a href="" class="product-item result-item">
+              <figure class="thumb">
+                <img src="./images/products/3. ATE BRAKE FLUIDS.webp" alt="" width="162" height="162" />
+              </figure>
+              <div class="content">
+                <h4 class="title">ATE BRAKE FLUIDS</h4>
+                <div class="note">
+                  <p class="note-title">หมายเหตุ:</p>
+                  <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="" class="product-item result-item">
+              <figure class="thumb">
+                <img src="./images/products/4. ATE PLASTILUBE.webp" alt="" width="162" height="162" />
+              </figure>
+              <div class="content">
+                <h4 class="title">ATE PLASTILUBE</h4>
+                <div class="note">
+                  <p class="note-title">หมายเหตุ:</p>
+                  <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="" class="product-item result-item">
+              <figure class="thumb">
+                <img src="./images/products/5. ATE BRAKE CYLINDER PASTE.webp" alt="" width="162" height="162" />
+              </figure>
+              <div class="content">
+                <h4 class="title">ATE BRAKE CYLINDER PASTE</h4>
+                <div class="note">
+                  <p class="note-title">หมายเหตุ:</p>
+                  <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                </div>
+              </div>
+            </a>
+          </section>
+
+          <div class="pagination-control" data-target="#brake-fluid-result">
+            <div class="page-display">1/1</div>
+            <div class="progress"></div>
+            <button class="prev">
+              <img src="./icons/arrow-left.svg" alt="" />
+            </button>
+            <button class="next"><img src="./icons/arrow-right.svg" alt="" /></button>
+          </div>
+
+          <!-- Tire Gauge -->
+
+          <hgroup class="category" data-target="#tire-gauge-result">
+            <p class="title">เครื่อง ตรวจวัดลมยาง</p>
+            <p class="count">0 สินค้า</p>
+          </hgroup>
+
+          <section id="tire-gauge-result" class="result-container grid" data-per-page="4">
+            <a href="" class="product-item result-item">
+              <figure class="thumb">
+                <img src="./images/products/6. TPMS CONTINENTAL CONTIS-C30.webp" alt="" width="162" height="162" />
+              </figure>
+              <div class="content">
+                <h4 class="title">TPMS CONTINENTAL CONTIS C-30</h4>
+                <div class="note">
+                  <p class="note-title">หมายเหตุ:</p>
+                  <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="" class="product-item result-item">
+              <figure class="thumb">
+                <img src="./images/products/7. TPMS Safety Alarm System XTP-200.webp" alt="" width="162" height="162" />
+              </figure>
+              <div class="content">
+                <h4 class="title">TPMS Safety Alarm System XTP - 200 (5 SENSOR)</h4>
+                <div class="note">
+                  <p class="note-title">หมายเหตุ:</p>
+                  <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="" class="product-item result-item">
+              <figure class="thumb">
+                <img src="./images/products/8. TPMS PROGRAMMING XTP-SP820.webp" alt="" width="162" height="162" />
+              </figure>
+              <div class="content">
+                <h4 class="title">TPMS PROGRAMMING XTP - SP820 และ UNIVERSAL SENSOR TPS-800-1</h4>
+                <div class="note">
+                  <p class="note-title">หมายเหตุ:</p>
+                  <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                </div>
+              </div>
+            </a>
+          </section>
+
+          <div class="pagination-control" data-target="#tire-gauge-result">
+            <div class="page-display">1/1</div>
+            <div class="progress"></div>
+            <button class="prev">
+              <img src="./icons/arrow-left.svg" alt="" />
+            </button>
+            <button class="next"><img src="./icons/arrow-right.svg" alt="" /></button>
+          </div>
+
+          <!-- windscreen -->
+
+          <hgroup class="category" data-target="#windscreen-result">
+            <p class="title">ใบปัดนํ้าฝน</p>
+            <p class="count">0 สินค้า</p>
+          </hgroup>
+
+          <section id="windscreen-result" class="result-container grid" data-per-page="4">
+            <a href="" class="product-item result-item">
+              <figure class="thumb">
+                <img src="./images/products/9. Continental AQUACTRL2.webp" alt="" width="162" height="162" />
+              </figure>
+              <div class="content">
+                <h4 class="title">Continental AQUACTRL2 windshield wipers Multiclip</h4>
+                <div class="note">
+                  <p class="note-title">หมายเหตุ:</p>
+                  <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="" class="product-item result-item">
+              <figure class="thumb">
+                <img src="./images/products/9. Continental AQUACTRL2.webp" alt="" width="162" height="162" />
+              </figure>
+              <div class="content">
+                <h4 class="title">Continental AQUACTRL2 windshield wipers Multiclip</h4>
+                <div class="note">
+                  <p class="note-title">หมายเหตุ:</p>
+                  <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="" class="product-item result-item">
+              <figure class="thumb">
+                <img src="./images/products/9. Continental AQUACTRL2.webp" alt="" width="162" height="162" />
+              </figure>
+              <div class="content">
+                <h4 class="title">Continental AQUACTRL2 windshield wipers Multiclip</h4>
+                <div class="note">
+                  <p class="note-title">หมายเหตุ:</p>
+                  <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="" class="product-item result-item">
+              <figure class="thumb">
+                <img src="./images/products/9. Continental AQUACTRL2.webp" alt="" width="162" height="162" />
+              </figure>
+              <div class="content">
+                <h4 class="title">Continental AQUACTRL2 windshield wipers Multiclip</h4>
+                <div class="note">
+                  <p class="note-title">หมายเหตุ:</p>
+                  <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="" class="product-item result-item">
+              <figure class="thumb">
+                <img src="./images/products/9. Continental AQUACTRL2.webp" alt="" width="162" height="162" />
+              </figure>
+              <div class="content">
+                <h4 class="title">Continental AQUACTRL2 windshield wipers Multiclip</h4>
+                <div class="note">
+                  <p class="note-title">หมายเหตุ:</p>
+                  <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="" class="product-item result-item">
+              <figure class="thumb">
+                <img src="./images/products/9. Continental AQUACTRL2.webp" alt="" width="162" height="162" />
+              </figure>
+              <div class="content">
+                <h4 class="title">Continental AQUACTRL2 windshield wipers Multiclip</h4>
+                <div class="note">
+                  <p class="note-title">หมายเหตุ:</p>
+                  <p class="note-text">ก้ามเบรกถูกพัฒนาให้มีประสิทธิภาพในการใช้งานอย่างสูงสุดด้วยวัสดุ</p>
+                </div>
+              </div>
+            </a>
+          </section>
+
+          <div class="pagination-control" data-target="#windscreen-result">
+            <div class="page-display">1/1</div>
+            <div class="progress"></div>
+            <button class="prev">
+              <img src="./icons/arrow-left.svg" alt="" />
+            </button>
+            <button class="next"><img src="./icons/arrow-right.svg" alt="" /></button>
+          </div>
+
+          <!-- --------------------------- -->
+        </section>
+      </div>
+    </main>
+    <footer-component></footer-component>
+  </body>
+</html>

@@ -30,8 +30,7 @@ const zoomImgButtons = document.querySelectorAll(".zoom-btn");
 const closeModalButton = document.querySelector(".close-modal-button");
 
 const modal = document.querySelector(".modal");
-const modalContentImg = modal.querySelector(".modal-content");
-console.log(modalContentImg);
+const modalContentImg = modal?.querySelector(".modal-content");
 
 zoomImgButtons?.forEach((button) => {
   button.addEventListener("click", (e) => {
