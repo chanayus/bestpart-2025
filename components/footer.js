@@ -22,8 +22,8 @@ class Footer extends HTMLElement {
                 <div class="flex gap-x-6 items-center">
                     <img src="../images/qr-code.png" alt="" width="120" height="120" class="rounded-xl">
                     <div class="space-y-3">
-                        <a href="https://line.me/R/ti/p/@bestpartth?from=page&amp;accountId=bestpartth" target="_blank" class="flex gap-x-3 items-center  link">
-                            <img src="../icons/line.svg" alt="" width="24" height="24">
+                        <a href="https://line.me/R/ti/p/@bestpartth?from=page&amp;accountId=bestpartth" target="_blank" class="flex gap-x-3 items-center link">
+                            <img src="../icons/line.svg" alt="" class="bg-green p-1 rounded-full" width="24" height="24">
                             @bestpartth
                         </a>
                         <a href="https://www.facebook.com/bestpartth" target="_blank" class="flex gap-x-3 items-center  link"> 
