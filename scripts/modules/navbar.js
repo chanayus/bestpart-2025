@@ -7,8 +7,6 @@ let prevScrollY = window.scrollY || 0;
 
 let menuEnabled = false;
 
-console.log(document.querySelector("#mobile-nav"));
-
 mobileNavToggle?.forEach((btn) =>
   btn?.addEventListener("click", () => {
     if (menuEnabled) {

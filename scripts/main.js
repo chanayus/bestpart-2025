@@ -12,7 +12,6 @@ export const removeElement = (el) => {
     "transitionend",
     () => {
       el.remove();
-      console.log("end");
     },
     { once: true }
   );
@@ -52,4 +51,18 @@ if (circle) {
 
 backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+const accordions = document.querySelectorAll(".accordion");
+
+accordions?.forEach((accordion) => {
+  const title = accordion.querySelector(".accordion-title");
+
+  title?.addEventListener("click", () => {
+    if (accordion.dataset.enabled === "true") {
+      accordion.dataset.enabled = "false";
+    } else {
+      accordion.dataset.enabled = "true";
+    }
+  });
 });

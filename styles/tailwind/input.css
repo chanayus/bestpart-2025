@@ -301,6 +301,13 @@
   }
   .btn-stroke-primary {
     @apply flex items-center justify-center gap-x-2 py-3 px-6 rounded-full bg-transparent text-primary border border-primary transition-colors hover:bg-primary hover:text-white;
+
+    .svg-icon {
+      background: var(--primary);
+    }
+    &:hover .svg-icon {
+      background: #fff;
+    }
   }
   .btn-rounded-gray {
     @apply flex items-center justify-center p-3.5 size-11 rounded-full bg-transparent transition-colors;

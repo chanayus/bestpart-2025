@@ -3,13 +3,12 @@ import Swiper from "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs
 const carSwiper = new Swiper("#car-slide", {
   slidesPerView: 3,
   spaceBetween: 20,
-
   centeredSlides: true,
-
   navigation: {
     nextEl: ".car-next",
     prevEl: ".car-prev",
   },
+
   breakpoints: {
     0: {
       direction: "horizontal",
@@ -21,6 +20,7 @@ const carSwiper = new Swiper("#car-slide", {
     },
     1025: {
       slidesPerView: 3,
+      verticalClass: "vertical-swiper",
       direction: "vertical",
     },
   },

@@ -1,12 +1,14 @@
 aside#car-selector {
   background: linear-gradient(180deg, rgba(144, 144, 144, 0.25) 0%, rgba(246, 246, 246, 0.16) 50%);
 
-  & .vertical-swiper {
-    width: 240px;
-    height: auto;
-    overflow: hidden;
-    max-height: 720px;
-    padding: 0.5rem;
+  & #car-slide {
+    &.swiper-vertical {
+      width: 240px;
+      height: auto;
+      overflow: hidden;
+      height: 720px;
+      padding: 0.5rem;
+    }
 
     & .swiper-slide {
       border: 2px solid transparent;

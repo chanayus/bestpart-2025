@@ -37,7 +37,6 @@ zoomImgButtons?.forEach((button) => {
     const image = button.dataset.src;
     const target = button.dataset.modalTarget;
 
-    console.log(target, image);
     if (!image || !target || !modalContentImg) return;
 
     modalContentImg.src = image;
