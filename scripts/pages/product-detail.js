@@ -1,4 +1,4 @@
-import { openModal, closeModal } from "../modules/modal.js";
+import { openModal } from "../modules/modal.js";
 
 const perPage = 4;
 
@@ -44,17 +44,21 @@ imageSlide?.forEach((slide, index) => {
 
 const updateActiveImageState = () => {
   imageSlide?.forEach((slide, index) => {
-    if (imageSelectIndex === index) slide.classList.add("active");
-    else slide.classList.remove("active");
+    if (imageSelectIndex === index) {
+      slide.classList.add("active");
+    } else {
+      slide.classList.remove("active");
+    }
   });
 };
+
+updateActiveImageState();
 
 // Image Preview Popup
 
 const zoomImgButtons = document.querySelectorAll(".zoom-btn");
-const closeModalButton = document.querySelector(".close-modal-button");
 
-const modal = document.querySelector(".modal");
+const modal = document.querySelector("#img-preview");
 const modalContentImg = modal?.querySelector(".modal-content");
 
 zoomImgButtons?.forEach((button) => {
@@ -66,6 +70,8 @@ zoomImgButtons?.forEach((button) => {
     const image = imageTarget.src;
     const target = button.dataset.modalTarget;
 
+    console.log(modal);
+
     if (!image || !target || !modalContentImg) return;
 
     modalContentImg.src = image;
@@ -74,8 +80,15 @@ zoomImgButtons?.forEach((button) => {
   });
 });
 
-closeModalButton?.addEventListener("click", () => {
-  closeModal(".modal");
-});
+const productOptions = document.querySelectorAll(".product-option");
 
-updateActiveImageState();
+let productSelected = null;
+
+productOptions?.forEach((option) => {
+  option.addEventListener("click", () => {
+    productOptions.forEach((option) => option.classList.remove("active"));
+    option.classList.add("active");
+    productSelected = option.innerHTML;
+    console.log(productSelected);
+  });
+});

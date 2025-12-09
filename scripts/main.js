@@ -1,4 +1,5 @@
 import "./modules/navbar.js";
+import "./modules/modal.js";
 
 document.querySelectorAll(".svg-icon")?.forEach((el) => {
   const src = el.getAttribute("data-src");
@@ -65,4 +66,34 @@ accordions?.forEach((accordion) => {
       accordion.dataset.enabled = "true";
     }
   });
+});
+
+// file input
+
+const fileInputs = document.querySelectorAll(".file-input");
+
+fileInputs.forEach((fileInput) => {
+  const input = fileInput.querySelector("input");
+  const placeholder = fileInput.querySelector(".placeholder");
+
+  console.log(placeholder);
+
+  input.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    placeholder.setAttribute("data-value", file.name);
+  });
+});
+
+// Warranty Register Form validation
+
+const warrantyForm = document.querySelector("#warranty-register form");
+
+warrantyForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(warrantyForm);
+
+  const data = Object.fromEntries(formData.entries());
+
+  console.log(data);
 });

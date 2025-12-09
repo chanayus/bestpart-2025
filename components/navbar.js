@@ -14,10 +14,10 @@ class Navbar extends HTMLElement {
             <a href="../index.html">
               <img src="../images/logo.svg" width="243" height="32" alt="" class="lg:w-60 w-42" />
             </a>
-            <div class="hidden lg:flex gap-8 [&_a]:transition-opacity [&_a:hover]:opacity-75">
+            <div class="hidden lg:flex items-center gap-8 [&_a,&>.open-modal-button]:transition-opacity [&_a:hover,&>.open-modal-button:hover]:opacity-75">
               <a href="">หน้าหลัก</a>
               <a href="">สินค้า</a>
-              <a href="">การรับประกัน</a>
+              <button class="open-modal-button" data-target="#warranty-register">การรับประกัน</button>
               <a href="">ข่าวสาร</a>
               <a href="">เกี่ยวกับเรา</a>
               <a href="">ติดต่อเรา</a>
@@ -51,13 +51,13 @@ class Navbar extends HTMLElement {
         <div class="menu-list font-medium gap-8 flex flex-col text-2xl text-center">
           <a href="../index.html" class="transition-colors text-white hover:text-orange">หน้าหลัก</a>
           <a href="../product.html" class="transition-colors ${this.getLinkStyle(["/product.html"])}">สินค้า</a>
-          <a href="../warranty.html" class="transition-colors ${this.getLinkStyle(["/warranty.html"])}">การรับประกัน</a>
+          <button class="open-modal-button text-white" data-target="#warranty-register">การรับประกัน</button>
           <a href="../news.html" class="transition-colors ${this.getLinkStyle(["/news.html"])}">ข่าวสาร</a>
           <a href="../about.html" class="transition-colors ${this.getLinkStyle(["/about.html"])}">เกี่ยวกับเรา</a>
           <a href="../contact.html" class="btn-orange px-10 py-2.5 text-white">ติดต่อเรา</a>
         </div>
 
-        <div class="text-white flex items-center gap-8 text-lg">
+        <div id="mobile-lang-switcher" class="text-white flex items-center gap-8 text-lg">
           <a href="" class="flex items-center gap-x-1.5">
             <img src="../images/thai.png" alt="" class="size-4" />  
             ไทย

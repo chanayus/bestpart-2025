@@ -20,6 +20,7 @@
     <script src="./components/navbar.js"></script>
     <script src="./components/footer.js"></script>
     <script src="./components/backToTop.js"></script>
+    <script src="./components/warrantyRegisterForm.js"></script>
 
     <!-- Script -->
     <script type="module" src="./scripts/main.js"></script>
@@ -28,9 +29,10 @@
   <body>
     <back-to-top-component></back-to-top-component>
     <navbar-component></navbar-component>
+    <warranty-register-form></warranty-register-form>
 
-    <div data-opened="false" class="modal">
-      <button type="button" class="close-modal-button">
+    <div data-opened="false" id="img-preview" class="modal">
+      <button type="button" data-target="#img-preview" class="close-modal-button">
         <img src="./icons/x.svg" alt="" class="w-full h-full object-contain" />
       </button>
       <img src="" class="modal-content" alt="" />
@@ -61,14 +63,14 @@
           <figure id="image-preview" class="flex-1 relative h-fit aspect-square max-w-xl max-lg:mx-auto">
             <img src="./images/products/2. ATE BRAKE DISCS.webp" alt="" class="w-full h-full object-cover" width="544" height="544" />
 
-            <button class="zoom-btn" data-modal-target=".modal">
+            <button class="zoom-btn" data-modal-target="#img-preview">
               <img src="./icons/zoom.svg" alt="" width="18" height="18" />
             </button>
           </figure>
         </div>
         <div class="space-y-5 flex-1">
           <h1 class="text-3xl text-primary font-medium">ATE BRAKE DISCS</h1>
-          <p class="text-primary font-medium">จานดีสเบรค อาเต้</p>
+          <p class="text-primary font-medium text-2xl">จานดีสเบรค อาเต้</p>
           <p class="font-medium">ขนาดบรรจุ 1 ชิ้น</p>
 
           <section>
