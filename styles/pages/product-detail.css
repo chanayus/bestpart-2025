@@ -245,6 +245,7 @@ table {
   & td {
     padding-block: 0.5rem;
     background-color: #f6f6f6;
+    max-width: 20ch;
   }
   & th {
     background: var(--primary);
