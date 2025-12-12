@@ -88,6 +88,7 @@
     font-smooth: always;
     text-rendering: optimizeLegibility;
     touch-action: manipulation;
+    scroll-padding-top: 6rem;
   }
 
   html {
