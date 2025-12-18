@@ -16,10 +16,10 @@ class Navbar extends HTMLElement {
             </a>
             <div class="hidden lg:flex items-center gap-8 [&_a,&>.open-modal-button]:transition-opacity [&_a:hover,&>.open-modal-button:hover]:opacity-75">
               <a href="../index.html">หน้าหลัก</a>
-              <a href="../index.html#product-section">สินค้า</a>
-              <button class="open-modal-button" data-target="#warranty-register">การรับประกัน</button>
-              <a href="../index.html#news-section">ข่าวสาร</a>
-              <a href="../index.html#about-section">เกี่ยวกับเรา</a>
+              <a href="../index.html#product-section" data-target="product-section">สินค้า</a>
+              <a href="../index.html#warranty-section" data-target="warranty-section">การรับประกัน</a>
+              <a href="../index.html#news-section" data-target="news-section">ข่าวสาร</a>
+              <a href="../index.html#about-section" data-target="about-section">เกี่ยวกับเรา</a>
               <a href="#footer">ติดต่อเรา</a>
               <button type="button" id="lang-switcher" class="flex items-center gap-x-2 relative">
                 <img src="../icons/global.svg" alt="" />
@@ -48,13 +48,13 @@ class Navbar extends HTMLElement {
         <button class="mobile-nav-toggle absolute top-4 right-4">
           <img src="../icons/x.svg" alt="" width="36" />
         </button>
-        <div class="menu-list font-medium gap-8 flex flex-col text-2xl text-center">
-          <a href="../index.html" class="transition-colors text-white hover:text-orange">หน้าหลัก</a>
-          <a href="../index.html#product-section" class="transition-colors ${this.getLinkStyle(["/product.html"])}">สินค้า</a>
-          <button class="open-modal-button text-white" data-target="#warranty-register">การรับประกัน</button>
-          <a href="../index.html#news-section" class="transition-colors ${this.getLinkStyle(["/news.html"])}">ข่าวสาร</a>
-          <a href="../index.html#about-section" class="transition-colors ${this.getLinkStyle(["/about.html"])}">เกี่ยวกับเรา</a>
-          <a href="#footer" class="btn-orange px-10 py-2.5 text-white">ติดต่อเรา</a>
+        <div class="menu-list font-medium gap-8 flex text-white flex-col text-2xl text-center">
+          <a href="../index.html" class="transition-colors  hover:text-orange">หน้าหลัก</a>
+          <a href="../index.html#product-section" data-target="product-section">สินค้า</a>
+          <a href="../index.html#warranty-section" data-target="warranty-section">การรับประกัน</a>
+          <a href="../index.html#news-section" data-target="news-section">ข่าวสาร</a>
+          <a href="../index.html#about-section" data-target="about-section">เกี่ยวกับเรา</a>
+          <a href="#footer" class="btn-orange px-10 py-2.5 ">ติดต่อเรา</a>
         </div>
 
         <div id="mobile-lang-switcher" class="text-white flex items-center gap-8 text-lg">

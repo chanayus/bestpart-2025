@@ -7,6 +7,10 @@
   border-top: 1px solid #eaeaea;
 }
 
+b {
+  font-weight: 500;
+}
+
 .image-slide {
   max-height: 28.75rem;
   overflow-y: auto;
@@ -131,6 +135,7 @@
 .accordion .accordion-content {
   overflow: hidden;
   color: var(--dark-gray);
+  text-wrap: balance;
   & b {
     font-weight: 600;
   }
