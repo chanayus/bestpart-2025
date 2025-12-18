@@ -76,8 +76,6 @@ fileInputs.forEach((fileInput) => {
   const input = fileInput.querySelector("input");
   const placeholder = fileInput.querySelector(".placeholder");
 
-  console.log(placeholder);
-
   input.addEventListener("change", (e) => {
     const file = e.target.files[0];
     placeholder.setAttribute("data-value", file.name);
@@ -94,6 +92,4 @@ warrantyForm.addEventListener("submit", (e) => {
   const formData = new FormData(warrantyForm);
 
   const data = Object.fromEntries(formData.entries());
-
-  console.log(data);
 });

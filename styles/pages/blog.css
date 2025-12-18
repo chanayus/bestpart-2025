@@ -37,3 +37,11 @@
     }
   }
 }
+
+
+#img-preview .modal-content{
+  aspect-ratio: 16/9;
+  width: 100%;
+  max-width: 71rem;
+  object-fit: cover;
+}

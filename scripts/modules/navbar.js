@@ -37,3 +37,12 @@ window.addEventListener("scroll", () => {
 langSwitcher?.addEventListener("click", () => {
   langSwitcher.classList.toggle("active");
 });
+
+const mobileNavLinks = document.querySelectorAll("#mobile-nav .menu-list a");
+
+mobileNavLinks?.forEach((link) => {
+  link.addEventListener("click", () => {
+    menuEnabled = false;
+    gsap.timeline({ defaults: { duration: 0.35 } }).fromTo("#mobile-nav", { autoAlpha: 1 }, { autoAlpha: 0 });
+  });
+});

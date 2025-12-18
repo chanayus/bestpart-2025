@@ -70,8 +70,6 @@ zoomImgButtons?.forEach((button) => {
     const image = imageTarget.src;
     const target = button.dataset.modalTarget;
 
-    console.log(modal);
-
     if (!image || !target || !modalContentImg) return;
 
     modalContentImg.src = image;
@@ -89,6 +87,5 @@ productOptions?.forEach((option) => {
     productOptions.forEach((option) => option.classList.remove("active"));
     option.classList.add("active");
     productSelected = option.innerHTML;
-    console.log(productSelected);
   });
 });

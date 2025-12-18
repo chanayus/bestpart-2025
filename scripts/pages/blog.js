@@ -27,9 +27,8 @@ const imageSlide = new Swiper("#image-slide", {
 });
 
 const zoomImgButtons = document.querySelectorAll(".zoom-btn");
-const closeModalButton = document.querySelector(".close-modal-button");
 
-const modal = document.querySelector(".modal");
+const modal = document.querySelector("#img-preview");
 const modalContentImg = modal?.querySelector(".modal-content");
 
 zoomImgButtons?.forEach((button) => {
@@ -42,8 +41,4 @@ zoomImgButtons?.forEach((button) => {
     modalContentImg.src = image;
     openModal(target);
   });
-});
-
-closeModalButton?.addEventListener("click", () => {
-  closeModal(".modal");
 });
