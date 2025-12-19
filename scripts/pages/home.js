@@ -66,7 +66,7 @@ function showNextOptions() {
   }
 }
 
-// 🔹 แสดง tag ที่เลือก (ปรับให้สร้าง 2 node แยก: บนสุด + ใน section)
+// 🔹 แสดง tag ที่เลือก
 function renderTags() {
   const createTag = (key) => {
     const tag = document.createElement("div");
@@ -143,8 +143,11 @@ function updateStep(tagCreateDelay = 0) {
   sections.forEach((s) => s.classList.remove("active"));
   sections[activeStep]?.classList.add("active");
 
+  console.log(activeStep);
+
   if (activeStep === -1) {
     gsap.to(spanText, { autoAlpha: 0, duration: 0.15 });
+    popup.classList.remove("active");
   } else {
     gsap.timeline().to(spanText, { autoAlpha: 0, duration: 0.15 }).to(spanText, { autoAlpha: 1, duration: 0.15 }, "+=0.15");
     setTimeout(() => {
