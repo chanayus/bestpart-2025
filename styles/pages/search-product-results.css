@@ -16,13 +16,8 @@ b {
   overflow-y: auto;
   display: flex;
   width: 100%;
-  justify-content: flex-start;
-  gap: 0.1875rem;
 
-  @media (width > 1024px) {
-    flex-direction: column;
-    max-width: 7rem;
-  }
+  gap: 0.1875rem;
 
   &.disable {
     & .item {
@@ -39,7 +34,7 @@ b {
     border-radius: 0.75rem;
     overflow: hidden;
     position: relative;
-    border: 0.1875rem solid transparent;
+    border: 0.125rem solid transparent;
     transition: border-color 0.25s;
     cursor: pointer;
     &.active {
