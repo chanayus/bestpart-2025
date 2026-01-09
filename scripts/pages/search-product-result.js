@@ -75,15 +75,3 @@ zoomImgButtons?.forEach((button) => {
     openModal(target);
   });
 });
-
-const productOptions = document.querySelectorAll(".product-option");
-
-let productSelected = null;
-
-productOptions?.forEach((option) => {
-  option.addEventListener("click", () => {
-    productOptions.forEach((option) => option.classList.remove("active"));
-    option.classList.add("active");
-    productSelected = option.innerHTML;
-  });
-});
