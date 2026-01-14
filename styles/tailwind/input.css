@@ -321,4 +321,13 @@
       background-color: #f1f1f1;
     }
   }
+  .btn-stroke-gray {
+    @apply flex items-center text-sm justify-center w-fit rounded-full bg-transparent transition-colors;
+    border: 1px solid #f1f1f1;
+
+    &:hover {
+      background-color: var(--primary);
+      color: #fff;
+    }
+  }
 }
